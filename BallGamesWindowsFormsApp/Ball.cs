@@ -6,10 +6,10 @@ namespace BallGamesWindowsFormsApp
 {
     public class Ball
     {
-        private MainForm mainForm { get; set; }
+        protected MainForm mainForm { get; set; }
         protected int x { get; set; } = 200;
-        private int v_x = 3;
-        private int v_y = 3;
+        protected int v_x;
+        protected int v_y;
         protected int y { get; set; } = 200;
         protected int size { get; set; } = 80;
         public Ball(MainForm mainForm)
@@ -35,7 +35,7 @@ namespace BallGamesWindowsFormsApp
             x += v_x;
             y += v_y;
         }
-        private void Clear()
+        public void Clear()
         {
             Graphics graphics = mainForm.CreateGraphics();
             Brush brush = Brushes.White;

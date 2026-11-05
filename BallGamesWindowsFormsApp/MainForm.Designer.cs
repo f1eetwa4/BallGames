@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button3 = new Button();
-            button4 = new Button();
+            stopButton = new Button();
+            createButton = new Button();
             SuspendLayout();
             // 
-            // button3
+            // stopButton
             // 
-            button3.Location = new Point(621, 12);
-            button3.Name = "button3";
-            button3.Size = new Size(167, 30);
-            button3.TabIndex = 2;
-            button3.Text = "Остановить все шарики";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            stopButton.Location = new Point(621, 12);
+            stopButton.Name = "stopButton";
+            stopButton.Size = new Size(167, 30);
+            stopButton.TabIndex = 2;
+            stopButton.Text = "Остановить все шарики";
+            stopButton.UseVisualStyleBackColor = true;
+            stopButton.Click += button3_Click;
             // 
-            // button4
+            // createButton
             // 
-            button4.Location = new Point(391, 12);
-            button4.Name = "button4";
-            button4.Size = new Size(210, 30);
-            button4.TabIndex = 3;
-            button4.Text = "Много шариков";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            createButton.Location = new Point(391, 12);
+            createButton.Name = "createButton";
+            createButton.Size = new Size(210, 30);
+            createButton.TabIndex = 3;
+            createButton.Text = "Создать";
+            createButton.UseVisualStyleBackColor = true;
+            createButton.Click += button4_Click;
             // 
             // MainForm
             // 
@@ -58,8 +58,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(button4);
-            Controls.Add(button3);
+            Controls.Add(createButton);
+            Controls.Add(stopButton);
             Name = "MainForm";
             Text = "Мячики";
             MouseDown += MainForm_MouseDown;
@@ -67,7 +67,7 @@
         }
 
         #endregion
-        private Button button3;
-        private Button button4;
+        private Button stopButton;
+        private Button createButton;
     }
 }

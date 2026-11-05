@@ -4,6 +4,9 @@ namespace BallGamesWindowsFormsApp
     {
         private List<MoveBall> moveBalls = new List<MoveBall>();
         private SpecificPlaceBall specificPlaceBall;
+        private static Random random = new Random();
+        private int countBallsOnForm;
+
         public MainForm()
         {
             InitializeComponent();
@@ -20,13 +23,27 @@ namespace BallGamesWindowsFormsApp
             foreach (var moveBall in moveBalls)
             {
                 moveBall.Stop();
+                if (moveBall.IsOnForm())
+                {
+                    countBallsOnForm++;
+                }
             }
+            MessageBox.Show($"Шариков поймано: {countBallsOnForm}");
+            countBallsOnForm = 0;
+            return;
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            foreach (var moveBall in moveBalls)
+            {
+                moveBall.Stop();
+                moveBall.Clear();
+            }
+
             moveBalls = new List<MoveBall>();
-            for (int i = 0; i < 10; i++)
+            int countMoveBalls = random.Next(6, 16);
+            for (int i = 0; i < countMoveBalls; i++)
             {
                 var moveBall = new MoveBall(this);
                 moveBalls.Add(moveBall);
