@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Text;
 using Timer = System.Windows.Forms.Timer;
 
-namespace BallGamesWindowsFormsApp
+namespace BallsLibrary
 {
     public class MoveBall : RandomPlaceBall
     {
         private Timer timer;
         private static List<int> possibleSpeedsMoveBalls = new List<int>
         { -6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6};
-        public MoveBall(MainForm mainForm) : base(mainForm)
+        public MoveBall(Form mainForm) : base(mainForm)
         {
             timer = new Timer();
             timer.Interval = 20;
@@ -39,9 +39,9 @@ namespace BallGamesWindowsFormsApp
 
         public bool IsOnForm()
         {
-            if (x >= 0 && y >= 0)
+            if (X >= 0 && Y >= 0)
             {
-                if (x + size <= mainForm.ClientSize.Width && y + size <= mainForm.ClientSize.Height)
+                if (X + Size <= mainForm.ClientSize.Width && Y + Size <= mainForm.ClientSize.Height)
                 {
                     return true;
                 }
