@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BallGamesWindowsFormsApp
+namespace BallsLibrary
 {
     public class Ball
     {
-        protected MainForm mainForm { get; set; }
-        protected int x { get; set; } = 200;
+        protected Form mainForm { get; set; }
+        public int X { get; protected set; } = 200;
+        public int Y { get; protected set; } = 200;
         protected int v_x;
         protected int v_y;
-        protected int y { get; set; } = 200;
-        protected int size { get; set; } = 80;
-        public Ball(MainForm mainForm)
+        public int Size { get; protected set; } = 80;
+        public Ball(Form mainForm)
         {
             this.mainForm = mainForm;
         }
@@ -20,7 +20,7 @@ namespace BallGamesWindowsFormsApp
         {
             Graphics graphics = mainForm.CreateGraphics();
             Brush brush = Brushes.Green;
-            Rectangle rectangle = new Rectangle(x, y, size, size);
+            Rectangle rectangle = new Rectangle(X, Y, Size, Size);
 
             graphics.FillEllipse(brush, rectangle);
         }
@@ -32,14 +32,14 @@ namespace BallGamesWindowsFormsApp
         }
         private void Go()
         {
-            x += v_x;
-            y += v_y;
+            X += v_x;
+            Y += v_y;
         }
         public void Clear()
         {
             Graphics graphics = mainForm.CreateGraphics();
             Brush brush = Brushes.White;
-            Rectangle rectangle = new Rectangle(x, y, size, size);
+            Rectangle rectangle = new Rectangle(X, Y, Size, Size);
 
             graphics.FillEllipse(brush, rectangle);
         }

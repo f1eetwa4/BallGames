@@ -50,7 +50,7 @@
             createButton.TabIndex = 3;
             createButton.Text = "Создать";
             createButton.UseVisualStyleBackColor = true;
-            createButton.Click += button4_Click;
+            createButton.Click += createButton_Click;
             // 
             // MainForm
             // 
@@ -62,7 +62,6 @@
             Controls.Add(stopButton);
             Name = "MainForm";
             Text = "Мячики";
-            MouseDown += MainForm_MouseDown;
             ResumeLayout(false);
         }
 
