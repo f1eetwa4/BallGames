@@ -4,7 +4,7 @@ namespace BallGamesWindowsFormsApp
 {
     public partial class MainForm : Form
     {
-        private List<MoveBall> moveBalls = new List<MoveBall>();
+        private List<Ball> balls = new List<Ball>();
         private int countBallsOnForm;
 
         public MainForm()
@@ -14,10 +14,10 @@ namespace BallGamesWindowsFormsApp
 
         private void button3_Click(object sender, EventArgs e)
         {
-            foreach (var moveBall in moveBalls)
+            foreach (var ball in balls)
             {
-                moveBall.Stop();
-                if (moveBall.IsOnForm())
+                ball.Stop();
+                if (ball.IsOnForm())
                 {
                     countBallsOnForm++;
                 }
@@ -29,9 +29,9 @@ namespace BallGamesWindowsFormsApp
 
         private void createButton_Click(object sender, EventArgs e)
         {
-            BallsManager.ClearBalls(moveBalls);
-            moveBalls =  BallsManager.GetBalls(this);
-            BallsManager.StartBalls(moveBalls);
+            BallsManager.ClearBalls(balls);
+            balls =  BallsManager.GetBalls(this);
+            BallsManager.StartBalls(balls);
         }
     }
 }

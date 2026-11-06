@@ -1,28 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Timer = System.Windows.Forms.Timer;
 
 namespace BallsLibrary
 {
     public class Ball
     {
         protected Form mainForm { get; set; }
-        public int X { get; protected set; } = 200;
-        public int Y { get; protected set; } = 200;
-        protected int v_x;
-        protected int v_y;
-        public int Size { get; protected set; } = 80;
+        private Timer timer;
+        public int CenterX { get; protected set; } = 200;
+        public int CenterY { get; protected set; } = 200;
+        protected int v_x = 3;
+        protected int v_y = 3;
+        public int Radius { get; protected set; } = 40;
         public Ball(Form mainForm)
         {
             this.mainForm = mainForm;
+            timer = new Timer();
+            timer.Interval = 20;
+            timer.Tick += Timer_Tick;
+        }
+        public void Start()
+        {
+            timer.Start();
+        }
+        public void Stop()
+        {
+            timer.Stop();
+        }
+        private void Timer_Tick(object? sender, EventArgs e)
+        {
+            Move();
+        }
+        public int LeftSide()
+        {
+            return Radius;
+        }
+        public int RightSide()
+        {
+            return mainForm.ClientSize.Width - Radius;
+        }
+        public int TopSide()
+        {
+            return Radius;
+        }
+        public int DownSide()
+        {
+            return  mainForm.ClientSize.Height - Radius;
+        }
+        public bool IsOnForm()
+        {
+            return (CenterX >= LeftSide() && CenterX <= RightSide() && CenterY >= TopSide() && CenterY <= DownSide());
         }
         public void Show()
         {
-            Graphics graphics = mainForm.CreateGraphics();
             Brush brush = Brushes.Green;
-            Rectangle rectangle = new Rectangle(X, Y, Size, Size);
-
-            graphics.FillEllipse(brush, rectangle);
+            Draw(brush);
         }
         public void Move()
         {
@@ -30,19 +64,22 @@ namespace BallsLibrary
             Go();
             Show();
         }
-        private void Go()
+        protected virtual void Go()
         {
-            X += v_x;
-            Y += v_y;
+            CenterX += v_x;
+            CenterY += v_y;
         }
         public void Clear()
         {
-            Graphics graphics = mainForm.CreateGraphics();
             Brush brush = Brushes.White;
-            Rectangle rectangle = new Rectangle(X, Y, Size, Size);
-
+            Draw(brush);
+        }
+        private void Draw(Brush brush)
+        {
+            Graphics graphics = mainForm.CreateGraphics();
+            Rectangle rectangle = new Rectangle(CenterX - Radius, CenterY - Radius, 2 * Radius, 2 * Radius);
             graphics.FillEllipse(brush, rectangle);
         }
-        
+
     }
 }

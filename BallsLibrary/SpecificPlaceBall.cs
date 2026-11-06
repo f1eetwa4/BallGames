@@ -4,8 +4,8 @@
     {
         public SpecificPlaceBall(Form mainForm, int x, int y) : base(mainForm)
         {
-            this.X = x - (Size / 2);
-            this.Y = y - (Size / 2);
+            this.CenterX = x;
+            this.CenterY = y;
         }
     }
 }
