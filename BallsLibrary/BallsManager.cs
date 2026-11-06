@@ -7,47 +7,50 @@ namespace BallsLibrary
     public static class BallsManager
     {
         private static Random random = new Random();
-        public static void ClearBalls(List<MoveBall> moveBalls)
+        public static void ClearBalls(List<Ball> balls)
         {
-            foreach (var moveBall in moveBalls)
+            foreach (var ball in balls)
             {
-                moveBall.Stop();
-                moveBall.Clear();
+                ball.Stop();
+                ball.Clear();
             }
         }
-        public static List<MoveBall> GetBalls(Form form)
+        public static List<Ball> GetBalls(Form form)
         {
-            List<MoveBall> moveBalls = new List<MoveBall>();
+            List<Ball> balls = new List<Ball>();
 
             int countMoveBalls = random.Next(6, 16);
             for (int i = 0; i < countMoveBalls; i++)
             {
                 var moveBall = new MoveBall(form);
-                moveBalls.Add(moveBall);
+                balls.Add(moveBall);
+
+                var ball = new RandomSizeAndPlaceBall(form);
+                balls.Add(ball);
             }
-            return moveBalls;
+            return balls;
         }
-        public static void StartBalls(List<MoveBall> moveBalls)
+        public static void StartBalls(List<Ball> balls)
         {
-            foreach (var moveBall in moveBalls)
+            foreach (var ball in balls)
             {
-               moveBall.Start();
+                ball.Start();
             }
         }
-        public static bool BallCaught(int x, int y, List<MoveBall> moveBalls)
+        public static bool BallCaught(int x, int y, List<Ball> balls)
         {
-            foreach (var moveBall in moveBalls)
+            foreach (var ball in balls)
             {
-                int x0 = moveBall.X + (moveBall.Size / 2);
-                int y0 = moveBall.Y + (moveBall.Size / 2);
-                int radius = moveBall.Size / 2;
+                int x0 = ball.CenterX;
+                int y0 = ball.CenterY;
+                int radius = ball.Radius;
 
                 bool inBall = Math.Pow((x - x0), 2) + Math.Pow((y - y0), 2) <= Math.Pow(radius, 2);
-                if (moveBall.IsOnForm() && inBall)
+                if (ball.IsOnForm() && inBall)
                 {
-                    moveBall.Stop();
-                    moveBall.Clear();
-                    moveBalls.Remove(moveBall);
+                    ball.Stop();
+                    ball.Clear();
+                    balls.Remove(ball);
                     return true;
                 }
             }
