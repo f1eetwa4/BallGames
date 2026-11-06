@@ -4,7 +4,7 @@
     {
         public RandomSizeAndPlaceBall(Form mainForm) : base(mainForm)
         {
-            Radius = random.Next(20, 40 + 1);
+            Radius = random.Next(20, 30 + 1);
         }
     }
 }

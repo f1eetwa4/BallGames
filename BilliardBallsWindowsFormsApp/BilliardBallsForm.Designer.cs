@@ -28,77 +28,112 @@
         /// </summary>
         private void InitializeComponent()
         {
-            leftLabel = new Label();
-            topLabel = new Label();
-            rightLabel = new Label();
-            downLabel = new Label();
-            createButton = new Button();
-            deleteButton = new Button();
+            secondGasLeftLabel = new Label();
+            firstGasTopLabel = new Label();
+            firstGasRightLabel = new Label();
+            firstGasDownLabel = new Label();
+            secondGasTopLabel = new Label();
+            secondGasDownLabel = new Label();
+            firstGasLeftLabel = new Label();
+            panel1 = new Panel();
+            secondGasRightLabel = new Label();
             SuspendLayout();
             // 
-            // leftLabel
+            // secondGasLeftLabel
             // 
-            leftLabel.AutoSize = true;
-            leftLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            leftLabel.Location = new Point(12, 200);
-            leftLabel.Name = "leftLabel";
-            leftLabel.Size = new Size(15, 17);
-            leftLabel.TabIndex = 0;
-            leftLabel.Text = "0";
+            secondGasLeftLabel.AutoSize = true;
+            secondGasLeftLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            secondGasLeftLabel.ForeColor = Color.Red;
+            secondGasLeftLabel.Location = new Point(12, 303);
+            secondGasLeftLabel.Name = "secondGasLeftLabel";
+            secondGasLeftLabel.Size = new Size(19, 21);
+            secondGasLeftLabel.TabIndex = 0;
+            secondGasLeftLabel.Text = "0";
             // 
-            // topLabel
+            // firstGasTopLabel
             // 
-            topLabel.AutoSize = true;
-            topLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            topLabel.Location = new Point(379, 9);
-            topLabel.Name = "topLabel";
-            topLabel.Size = new Size(15, 17);
-            topLabel.TabIndex = 1;
-            topLabel.Text = "0";
+            firstGasTopLabel.AutoSize = true;
+            firstGasTopLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            firstGasTopLabel.ForeColor = Color.Blue;
+            firstGasTopLabel.Location = new Point(355, 9);
+            firstGasTopLabel.Name = "firstGasTopLabel";
+            firstGasTopLabel.Size = new Size(19, 21);
+            firstGasTopLabel.TabIndex = 1;
+            firstGasTopLabel.Text = "0";
             // 
-            // rightLabel
+            // firstGasRightLabel
             // 
-            rightLabel.AutoSize = true;
-            rightLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            rightLabel.Location = new Point(773, 200);
-            rightLabel.Name = "rightLabel";
-            rightLabel.Size = new Size(15, 17);
-            rightLabel.TabIndex = 2;
-            rightLabel.Text = "0";
+            firstGasRightLabel.AutoSize = true;
+            firstGasRightLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            firstGasRightLabel.ForeColor = Color.Blue;
+            firstGasRightLabel.Location = new Point(773, 122);
+            firstGasRightLabel.Name = "firstGasRightLabel";
+            firstGasRightLabel.Size = new Size(19, 21);
+            firstGasRightLabel.TabIndex = 2;
+            firstGasRightLabel.Text = "0";
             // 
-            // downLabel
+            // firstGasDownLabel
             // 
-            downLabel.AutoSize = true;
-            downLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            downLabel.Location = new Point(379, 424);
-            downLabel.Name = "downLabel";
-            downLabel.Size = new Size(15, 17);
-            downLabel.TabIndex = 3;
-            downLabel.Text = "0";
+            firstGasDownLabel.AutoSize = true;
+            firstGasDownLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            firstGasDownLabel.ForeColor = Color.Blue;
+            firstGasDownLabel.Location = new Point(355, 420);
+            firstGasDownLabel.Name = "firstGasDownLabel";
+            firstGasDownLabel.Size = new Size(19, 21);
+            firstGasDownLabel.TabIndex = 3;
+            firstGasDownLabel.Text = "0";
             // 
-            // createButton
+            // secondGasTopLabel
             // 
-            createButton.BackColor = Color.Lime;
-            createButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            createButton.Location = new Point(12, 9);
-            createButton.Name = "createButton";
-            createButton.Size = new Size(146, 38);
-            createButton.TabIndex = 4;
-            createButton.Text = "Создать шары";
-            createButton.UseVisualStyleBackColor = false;
-            createButton.Click += createButton_Click;
+            secondGasTopLabel.AutoSize = true;
+            secondGasTopLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            secondGasTopLabel.ForeColor = Color.Red;
+            secondGasTopLabel.Location = new Point(425, 9);
+            secondGasTopLabel.Name = "secondGasTopLabel";
+            secondGasTopLabel.Size = new Size(19, 21);
+            secondGasTopLabel.TabIndex = 6;
+            secondGasTopLabel.Text = "0";
             // 
-            // deleteButton
+            // secondGasDownLabel
             // 
-            deleteButton.BackColor = Color.Red;
-            deleteButton.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            deleteButton.Location = new Point(642, 9);
-            deleteButton.Name = "deleteButton";
-            deleteButton.Size = new Size(146, 38);
-            deleteButton.TabIndex = 5;
-            deleteButton.Text = "Удалить шары";
-            deleteButton.UseVisualStyleBackColor = false;
-            deleteButton.Click += this.deleteButton_Click;
+            secondGasDownLabel.AutoSize = true;
+            secondGasDownLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            secondGasDownLabel.ForeColor = Color.Red;
+            secondGasDownLabel.Location = new Point(425, 420);
+            secondGasDownLabel.Name = "secondGasDownLabel";
+            secondGasDownLabel.Size = new Size(19, 21);
+            secondGasDownLabel.TabIndex = 7;
+            secondGasDownLabel.Text = "0";
+            // 
+            // firstGasLeftLabel
+            // 
+            firstGasLeftLabel.AutoSize = true;
+            firstGasLeftLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            firstGasLeftLabel.ForeColor = Color.Blue;
+            firstGasLeftLabel.Location = new Point(12, 122);
+            firstGasLeftLabel.Name = "firstGasLeftLabel";
+            firstGasLeftLabel.Size = new Size(19, 21);
+            firstGasLeftLabel.TabIndex = 8;
+            firstGasLeftLabel.Text = "0";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Black;
+            panel1.Location = new Point(399, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(2, 450);
+            panel1.TabIndex = 9;
+            // 
+            // secondGasRightLabel
+            // 
+            secondGasRightLabel.AutoSize = true;
+            secondGasRightLabel.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            secondGasRightLabel.ForeColor = Color.Red;
+            secondGasRightLabel.Location = new Point(773, 303);
+            secondGasRightLabel.Name = "secondGasRightLabel";
+            secondGasRightLabel.Size = new Size(19, 21);
+            secondGasRightLabel.TabIndex = 10;
+            secondGasRightLabel.Text = "0";
             // 
             // BilliardBallsForm
             // 
@@ -106,26 +141,35 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(deleteButton);
-            Controls.Add(createButton);
-            Controls.Add(downLabel);
-            Controls.Add(rightLabel);
-            Controls.Add(topLabel);
-            Controls.Add(leftLabel);
+            Controls.Add(secondGasRightLabel);
+            Controls.Add(panel1);
+            Controls.Add(firstGasLeftLabel);
+            Controls.Add(secondGasDownLabel);
+            Controls.Add(secondGasTopLabel);
+            Controls.Add(firstGasDownLabel);
+            Controls.Add(firstGasRightLabel);
+            Controls.Add(firstGasTopLabel);
+            Controls.Add(secondGasLeftLabel);
             Name = "BilliardBallsForm";
             Text = "BilliardBalls";
             Load += Form1_Load;
+            Shown += BilliardBallsForm_Shown;
+            Paint += BilliardBallsForm_Paint;
+            MouseDown += BilliardBallsForm_MouseDown;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label leftLabel;
-        private Label topLabel;
-        private Label rightLabel;
-        private Label downLabel;
-        private Button createButton;
-        private Button deleteButton;
+        private Label secondGasLeftLabel;
+        private Label firstGasTopLabel;
+        private Label firstGasRightLabel;
+        private Label firstGasDownLabel;
+        private Label secondGasTopLabel;
+        private Label secondGasDownLabel;
+        private Label firstGasLeftLabel;
+        private Panel panel1;
+        private Label secondGasRightLabel;
     }
 }

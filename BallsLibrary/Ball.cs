@@ -13,7 +13,8 @@ namespace BallsLibrary
         public int CenterY { get; protected set; } = 200;
         protected int v_x = 3;
         protected int v_y = 3;
-        public int Radius { get; protected set; } = 40;
+        public int Radius { get; protected set; } = 30;
+        protected Brush brush = Brushes.Green;
         public Ball(Form mainForm)
         {
             this.mainForm = mainForm;
@@ -55,7 +56,6 @@ namespace BallsLibrary
         }
         public void Show()
         {
-            Brush brush = Brushes.Green;
             Draw(brush);
         }
         public void Move()
@@ -71,14 +71,18 @@ namespace BallsLibrary
         }
         public void Clear()
         {
-            Brush brush = Brushes.White;
-            Draw(brush);
+            Brush brushClear = Brushes.White;
+            Draw(brushClear);
         }
         private void Draw(Brush brush)
         {
             Graphics graphics = mainForm.CreateGraphics();
             Rectangle rectangle = new Rectangle(CenterX - Radius, CenterY - Radius, 2 * Radius, 2 * Radius);
             graphics.FillEllipse(brush, rectangle);
+        }
+        public void ChangeColor(Brush newBrush)
+        {
+            brush = newBrush;
         }
 
     }
