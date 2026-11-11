@@ -41,8 +41,8 @@ namespace BallsLibrary
         {
             foreach (var ball in balls)
             {
-                int x0 = ball.CenterX;
-                int y0 = ball.CenterY;
+                float x0 = ball.CenterX;
+                float y0 = ball.CenterY;
                 int radius = ball.Radius;
 
                 bool inBall = Math.Pow((x - x0), 2) + Math.Pow((y - y0), 2) <= Math.Pow(radius, 2);

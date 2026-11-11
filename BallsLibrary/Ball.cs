@@ -9,10 +9,10 @@ namespace BallsLibrary
     {
         protected Form mainForm { get; set; }
         private Timer timer;
-        public int CenterX { get; protected set; } = 200;
-        public int CenterY { get; protected set; } = 200;
-        protected int v_x = 3;
-        protected int v_y = 3;
+        public float CenterX { get; protected set; } = 200;
+        public float CenterY { get; protected set; } = 200;
+        protected float v_x = 3;
+        protected float v_y = 3;
         public int Radius { get; protected set; } = 30;
         protected Brush brush = Brushes.Green;
         public Ball(Form mainForm)
@@ -77,7 +77,7 @@ namespace BallsLibrary
         private void Draw(Brush brush)
         {
             Graphics graphics = mainForm.CreateGraphics();
-            Rectangle rectangle = new Rectangle(CenterX - Radius, CenterY - Radius, 2 * Radius, 2 * Radius);
+            RectangleF rectangle = new RectangleF(CenterX - Radius, CenterY - Radius, 2 * Radius, 2 * Radius);
             graphics.FillEllipse(brush, rectangle);
         }
         public void ChangeColor(Brush newBrush)
