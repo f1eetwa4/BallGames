@@ -6,7 +6,7 @@ namespace BallsLibrary
 {
     public class FireworkBall : MoveBall
     {
-        private List<Brush> brushes = new List<Brush>()
+        protected List<Brush> brushes = new List<Brush>()
         { Brushes.Red, Brushes.Orange, Brushes.Yellow, Brushes.Green,
           Brushes.LightBlue, Brushes.Blue, Brushes.Purple
         };
@@ -25,6 +25,10 @@ namespace BallsLibrary
         {
             base.Go();
             v_y += g;
+        }
+        protected void ChangeInterval()
+        {
+            timer.Interval = 50;
         }
     }
 }

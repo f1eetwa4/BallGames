@@ -8,6 +8,7 @@ namespace FruitNinjaWindowsFormsApp
         private static Random random = new Random();
         List<Ball> fruitBalls = new List<Ball>();
         private Timer timer = new Timer();
+        private Timer slowMotionTimer = new Timer();
         public MainForm()
         {
             InitializeComponent();
@@ -18,16 +19,30 @@ namespace FruitNinjaWindowsFormsApp
         {
             UpdateFruitBalls();
         }
-
+        private void SlowMotionTimer_Tick(object? sender, EventArgs e)
+        {
+            slowMotionTimer.Stop();
+        }
         private void MainForm_MouseMove(object sender, MouseEventArgs e)
         {
             Ball cutBall = GetCutBall(e.X, e.Y, fruitBalls);
-            if (cutBall != null && cutBall is BombBall)
+            if (cutBall != null)
             {
-                EndGame();
-                MessageBox.Show("Вы разрезали бомбу! Игра окончена");
-                timer.Start();
+                if (cutBall is BombBall)
+                {
+                    EndGame();
+                    MessageBox.Show("Вы разрезали бомбу! Игра окончена");
+                    timer.Start();
+                }
+                if (cutBall is BananaBall)
+                {
+                    slowMotionTimer.Interval = 5000;
+                    slowMotionTimer.Tick += SlowMotionTimer_Tick;
+                    slowMotionTimer.Start();   
+                }
             }
+            
+            
         }
         public static Ball GetCutBall(int x, int y, List<Ball> balls)
         {
@@ -72,6 +87,13 @@ namespace FruitNinjaWindowsFormsApp
                         fruitBalls.Add(bombBall);
                         bombBall.Start();
                     }
+                    else if (chance <= 10)
+                    {
+                        BananaBall bananaBall = new BananaBall(this);
+                        fruitBalls.Add(bananaBall);
+                        bananaBall.Start();
+
+                    }
                     else
                     {
                         FruitBall fruitBall = new FruitBall(this);
@@ -88,6 +110,22 @@ namespace FruitNinjaWindowsFormsApp
                     fruitBall.Stop();
                 }
                 fruitBalls.Clear();
+            }
+            if (slowMotionTimer.Enabled)
+            {
+                foreach (var fruitBall in fruitBalls)
+                {
+                    FruitBall fruit = (FruitBall)fruitBall;
+                    fruit.IncreaseInterval();
+                }
+            }
+            else
+            {
+                foreach (var fruitBall in fruitBalls)
+                {
+                    FruitBall fruit = (FruitBall)fruitBall;
+                    fruit.ReturnInterval();
+                }
             }
         }
         private void EndGame()
