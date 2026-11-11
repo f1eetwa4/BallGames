@@ -3,4 +3,5 @@
   <Project Path="BallsLibrary/BallsLibrary.csproj" Id="e40af9c2-c7ec-448b-af80-aec1f0772be4" />
   <Project Path="BilliardBallsWindowsFormsApp/BilliardBallsWindowsFormsApp.csproj" Id="4c16075d-7e6d-48f3-b7b7-35fa7a2714a5" />
   <Project Path="CatchBallsWindowsFormsApp/CatchBallsWindowsFormsApp.csproj" Id="ad1ed3ef-b552-4b9e-a15c-1180e2f94e0c" />
+  <Project Path="FireworkWindowsFormsApp/FireworkWindowsFormsApp.csproj" Id="50c0feac-e929-4960-93dd-1446511e9a52" />
 </Solution>
