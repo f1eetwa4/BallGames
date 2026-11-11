@@ -1,9 +1,8 @@
-﻿using BallsLibrary;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace FireworkWindowsFormsApp
+namespace BallsLibrary
 {
     public class FireworkBall : MoveBall
     {

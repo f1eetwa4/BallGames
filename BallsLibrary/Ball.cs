@@ -50,7 +50,7 @@ namespace BallsLibrary
         {
             return  mainForm.ClientSize.Height - Radius;
         }
-        public bool IsOnForm()
+        public virtual bool IsOnForm()
         {
             return (CenterX >= LeftSide() && CenterX <= RightSide() && CenterY >= TopSide() && CenterY <= DownSide());
         }
