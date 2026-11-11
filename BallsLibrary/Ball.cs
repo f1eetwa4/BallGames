@@ -8,7 +8,7 @@ namespace BallsLibrary
     public class Ball
     {
         protected Form mainForm { get; set; }
-        private Timer timer;
+        protected Timer timer;
         public float CenterX { get; protected set; } = 200;
         public float CenterY { get; protected set; } = 200;
         protected float v_x = 3;
@@ -84,6 +84,7 @@ namespace BallsLibrary
         {
             brush = newBrush;
         }
+
 
     }
 }
