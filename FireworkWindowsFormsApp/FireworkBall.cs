@@ -12,7 +12,7 @@ namespace FireworkWindowsFormsApp
           Brushes.LightBlue, Brushes.Blue, Brushes.Purple
         };
         private float g = 0.2f;
-        public FireworkBall(Form mainForm, int centerX, int centerY) : base(mainForm)
+        public FireworkBall(Form mainForm, float centerX, float centerY) : base(mainForm)
         {
             this.CenterX = centerX;
             this.CenterY = centerY;
