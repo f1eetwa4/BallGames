@@ -37,7 +37,7 @@
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Name = "MainForm";
-            Text = "Form1";
+            Text = "FruitNinja";
             MouseMove += MainForm_MouseMove;
             ResumeLayout(false);
         }
