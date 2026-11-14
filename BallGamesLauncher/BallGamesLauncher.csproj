@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+	<ValidateExecutableReferencesMatchSelfContained>false</ValidateExecutableReferencesMatchSelfContained>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BallGamesWindowsFormsApp\BallGamesWindowsFormsApp.csproj" />
+    <ProjectReference Include="..\BilliardBallsWindowsFormsApp\BilliardBallsWindowsFormsApp.csproj" />
+    <ProjectReference Include="..\CatchBallsWindowsFormsApp\CatchBallsWindowsFormsApp.csproj" />
+    <ProjectReference Include="..\FireworkWindowsFormsApp\FireworkWindowsFormsApp.csproj" />
+    <ProjectReference Include="..\FruitNinjaWindowsFormsApp\FruitNinjaWindowsFormsApp.csproj" />
+  </ItemGroup>
+
+</Project>

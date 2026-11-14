@@ -26,5 +26,10 @@ namespace CatchBallsWindowsFormsApp
                 caughtBallsLabel.Text = countCaughtBalls.ToString();
             }
         }
+
+        private void CatchBallForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BallsManager.ClearBalls(balls);
+        }
     }
 }

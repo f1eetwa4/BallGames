@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="BallGamesLauncher/BallGamesLauncher.csproj" Id="5d62dcbb-3d2a-4124-be96-caa0f23d654e" />
   <Project Path="BallGamesWindowsFormsApp/BallGamesWindowsFormsApp.csproj" />
   <Project Path="BallsLibrary/BallsLibrary.csproj" Id="e40af9c2-c7ec-448b-af80-aec1f0772be4" />
   <Project Path="BilliardBallsWindowsFormsApp/BilliardBallsWindowsFormsApp.csproj" Id="4c16075d-7e6d-48f3-b7b7-35fa7a2714a5" />

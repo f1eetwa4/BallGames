@@ -88,7 +88,8 @@
             ClientSize = new Size(800, 450);
             Controls.Add(panel1);
             Name = "CatchBallForm";
-            Text = "Form1";
+            Text = "CatchBalls";
+            FormClosing += CatchBallForm_FormClosing;
             MouseDown += CatchBallForm_MouseDown;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
