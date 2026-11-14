@@ -38,6 +38,7 @@
             ClientSize = new Size(800, 450);
             Name = "MainForm";
             Text = "FruitNinja";
+            FormClosing += MainForm_FormClosing;
             MouseMove += MainForm_MouseMove;
             ResumeLayout(false);
         }

@@ -38,11 +38,11 @@ namespace FruitNinjaWindowsFormsApp
                 {
                     slowMotionTimer.Interval = 5000;
                     slowMotionTimer.Tick += SlowMotionTimer_Tick;
-                    slowMotionTimer.Start();   
+                    slowMotionTimer.Start();
                 }
             }
-            
-            
+
+
         }
         public static Ball GetCutBall(int x, int y, List<Ball> balls)
         {
@@ -137,6 +137,12 @@ namespace FruitNinjaWindowsFormsApp
             }
             fruitBalls.Clear();
             timer.Stop();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            EndGame();
+            slowMotionTimer.Stop();
         }
     }
 }

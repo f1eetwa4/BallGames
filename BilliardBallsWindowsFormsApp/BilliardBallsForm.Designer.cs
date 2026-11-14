@@ -152,6 +152,7 @@
             Controls.Add(secondGasLeftLabel);
             Name = "BilliardBallsForm";
             Text = "BilliardBalls";
+            FormClosing += BilliardBallsForm_FormClosing;
             Load += Form1_Load;
             Shown += BilliardBallsForm_Shown;
             Paint += BilliardBallsForm_Paint;

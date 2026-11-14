@@ -30,8 +30,13 @@ namespace BallGamesWindowsFormsApp
         private void createButton_Click(object sender, EventArgs e)
         {
             BallsManager.ClearBalls(balls);
-            balls =  BallsManager.GetBalls(this);
+            balls = BallsManager.GetBalls(this);
             BallsManager.StartBalls(balls);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            BallsManager.ClearBalls(balls);
         }
     }
 }

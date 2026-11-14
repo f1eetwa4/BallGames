@@ -178,7 +178,7 @@ namespace BilliardBallsWindowsFormsApp
                 }
             }
 
-            if (firstGasLeftCount == firstGasBalls.Count / 2 && secondGasLeftCount == firstGasBalls.Count / 2 
+            if (firstGasLeftCount == firstGasBalls.Count / 2 && secondGasLeftCount == firstGasBalls.Count / 2
                 && firstGasRightCount == firstGasBalls.Count / 2 && secondGasRightCount == firstGasBalls.Count / 2)
             {
                 return true;
@@ -194,6 +194,12 @@ namespace BilliardBallsWindowsFormsApp
                 MessageBox.Show("Произошло полное перемешивание газов");
                 Application.Restart();
             }
+        }
+
+        private void BilliardBallsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StopBalls();
+            timer.Stop();
         }
     }
 }

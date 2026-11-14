@@ -62,6 +62,7 @@
             Controls.Add(stopButton);
             Name = "MainForm";
             Text = "Мячики";
+            FormClosing += MainForm_FormClosing;
             ResumeLayout(false);
         }
 
